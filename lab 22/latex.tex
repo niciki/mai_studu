@@ -1,0 +1,72 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\documentclass{article}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\footrule}{\centering\rule[0pt]{\footruleactualwidthandnotthickness}{\footrulewidth}\vskip\footruleskip}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\footruleskip}{0pt}
+\renewcommand{\footruleactualwidthandnotthickness}{50pt}
+\fancyfoot[C]{\textit{\textbf{\thepage}}}
+\fancypagestyle{plain}{}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage[left=3.7cm, top=2.7cm, right=3.7cm, bottom=15mm, nohead, nofoot]{geometry}
+\begin{document}
+    \large
+    \noindent выполняется неравенство
+    \begin{equation}
+    |f'(x)-f(x)| < \varepsilon \text{.} \tag{6.14}
+    \end{equation}
+    \par Если число $\delta$ можно
+    выбрать не зависящим от точки x, так, чтобы при выполнении условия (6.13) выполнилось ус- ловие(6.14), то функция $f$ называется равномерно непрерывной. Сформулируем определние этого важного понятия более подробно.
+    \newline
+    \noindent\textbf{О\,п\,р\,е\,д\,е\,л\,е\,н\,и\,е\,3.}
+    \textsl{Функция f, заданная на отрезке $ [a, b] $, называется равномерно непрерывной на нем, \,если для любого  $ \epsilon > 0 $ существует такое $ \delta>0 $, \,что для любых двух точек $x \in [a, b]$ и $x' \in [a, b]$ таких,что $|x'-x| < \delta$, выполняется неравенство $|f'(x)-f(x)| < \epsilon.$}
+    \vspace {0.3cm}
+    \par В символической записи определение непрерывности функции на отрезке выглядит следующим образом:\vspace {0.3cm}
+    \par 
+    $\forall \,x\,\forall \,\epsilon > 0 \,\exists\,\delta > 0\, \forall \,x', |x' - x| < \delta:|f(x') - f(x)|<\epsilon,$\vspace {0.3cm}\par\noindent
+    а определение равномерноей непрерывности так:
+    \begin{equation}
+        \forall\,\epsilon\,>\,0\,\exists\,\delta\,>\,0\,\forall\,x,x',|x'-x| < \delta:|f(x')- f(x)| < \epsilon.
+        \tag{6.15} 
+    \end{equation}
+    \noindent Здесь точки $x$ и $x'$ принадлежат отрезку, на котором рассматривается функция $f$.
+    \parЯсно,что всякая равномерно непрерывная на отрезке функция непрерывна на нём: если в определении равномерной непрерывности зафиксировать точку $x$, то получится определение непрерывности в этой точке.
+    \par \textbf{П\,р\,и\,м\,е\,р\,ы.\,1.} Функция$f(x) = x$ равномерно непрерывна на всей числовой оси, так как, если задано $\epsilon$ > 0,достаточно взять $\delta = \epsilon$;тогда если $|x - x'| < \delta$,то,в силу равенств $f(x) = x$,$f(x') = x'$,получим $|f(x) - f(x')| < \epsilon$.
+    \par \textbf{2.}Функция $f(x) = sin(\frac{1}{x}),x \ne 0$,будучи непрерывной на своей области определения, т.е. на числовой оси,из которой удалена точка $x = 0$,не будет на ней равномерно непрерывна.
+    \par В самом деле,если взять,например, $\epsilon = 1$,то при любом сколь угодно малом $\delta > 0$ найдутся точки $x$ и $x'$,например точки вида $x = \frac{1}{\pi/2 + 2\pi n}$ и $x = \frac{1}{3\pi/2 + 2\pi n}$ (n - достаточно большое натуральное число) такие,что $|x - x'| < \delta$, а вместе с тем |$f(x)-f(x')$| > 1.
+    \setcounter{page}{229}
+    \newpage
+    \textbf{3.}Функция $f(x) = x^2$ не равномерное непрерывна на всей числовой оси \textbf{R}.Это следует из того, что для любого фиксированного $h \ne 0$ имеет место равенство
+    $$ \lim_{x\to\infty} [f(x + h) - f(x)] = \lim_{x\to\infty} [(x + h)^2 - x^2] = $$
+    $$ = \lim_{x\to\infty} (2xh + h^2) = \infty.$$
+    \noindent Поэтому если задано $\epsilon > 0$, то, каково бы ни было $\delta > 0$, зафиксировав $h \ne 0 ,\, $|$h$| < $\delta$, можно так выбрать $x$,что ,будет выполняться неравенство |$f(x+h) - f(x)$| > $\epsilon.$\newline
+    \textbf{Т\,Е\,О\,Р\,Е\,М\,А\,5\,(Кантора)} \textsl{Функция, непрерывная на отрезке ,равномерно непрерывна на нем.}
+    \newline
+    \texttt{Д\,о\,к\,а\,з\,а\,т\,е\,л\,ь\,с\,т\,в\,о.}Докажем теорему от противного. Допустим, что на некотором отрезке [$a,b$] существует непрерывная,однако не равномерно непрерывная на нем функция $f$.Это означает(см.(6.15)),что существует такое $\epsilon_0 > 0$,что для любого $\delta > 0$ найдутся такие точки $x \in [a,b]$ и $x' \in [a,b]$,что |$x' - x$| < $\delta$,но |$f(x') - f(x)$|$\ge \epsilon_0$.В частности, для $\delta = 1/n$ найдутся такие точки, обозначим их $x_n$ и $x'_n$,что
+    \begin{equation}
+        |x'_n - x_n| < \frac{1}{n},\tag{6.16}
+    \end{equation}
+    но
+    \begin{equation}
+        |f(x'_n) - f(x_n)|\ge \epsilon_0 ,\tag{6.17}
+    \end{equation}
+    \par Из последовательности точек ${x_n}$ в силу свойства компактности(см. теорему 4 в п. 4.6) можно выделить сходящуюся подпоследовательность $ x_{n_k}$. Обозначим ее предел $x_0$:
+    \begin{equation}
+       \lim_{k\to\infty} f(x_{n_k}) = = x_0 ,\tag{6.18}
+    \end{equation}
+    \noindent Поскольку $a \le x_{n_k} \le b, k = 1,2, ... ,$ то $a \le x_0 \le b$ (см. п. 4.3).
+    \newline
+    Функция $f$ непрерывна в точке $x_0$, поэтому
+    \begin{equation}
+       \lim_{k\to\infty} f(x_{n_k}) \underset{\text{(6.18)}}{=} f(x_0) ,\tag{6.19}
+    \end{equation}
+    \newline
+    Подпоследовательность ${x'_{n_k}}$ подпоследовательности ${x'_n}$ также сходится к точке $x_0$,ибо при $k \rightarrow \infty$.
+    $$|x'_{n_k} - x_0| \le |x'_{n_k} - x_{n_k}| + |x_{n_k} - x_0| \underset{\text{(6.16)}}{<} \frac{1}{n_k} + |x_{n_k} - x_0| \rightarrow 0.$$
+\end{document}
